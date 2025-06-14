@@ -1,0 +1,145 @@
+@font-face {
+  font-family: 'Louis George Cafe';
+  src: url('fonts/Louis George Cafe.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Louis George Cafe Bold';
+  src: url('fonts/Louis George Cafe Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TF Spermo';
+  src: url('fonts/TF Spermo.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+html, body{
+    margin: 0;
+    height: 100%;
+    background-color: #99B7F5 ;
+
+}
+
+
+/*Navigation Bar*/
+.navigation {
+    background-color: rgb(238,240,229, 0.4);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    height: 70px;
+    position:fixed;
+    width:100%;
+    
+}
+
+.links{
+    display:flex;
+    gap:20px;
+    list-style-type: none;
+    margin:0;
+    padding: 0;
+}
+
+
+.navigation a{
+    text-decoration: none;
+    color:rgba(238,240,229,255);
+    font-family: 'Louis George Cafe Bold', sans-serif;
+    font-size:x-large;
+}
+.navigation a:hover{
+    color:#FCCA59;
+}
+
+.logo{
+    height: 60%;
+    border-radius: 50%;
+}
+/*navigation bar end*/
+
+
+
+
+
+/*Intro*/
+
+ 
+.intro{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height:100vh;
+    padding: 0 450px;
+    box-sizing: border-box
+}
+
+.intro-text  {
+    text-align: center;
+    margin-right: 70px;
+}
+
+.intro-text h1{
+font-size: 175px;
+font-family: 'TF Spermo', Serif;
+color: #FCCA59;
+text-shadow: 7px 10px 7px #6280d1;
+}
+
+.intro-text h3 {
+font-size: 50px;
+font-family: 'Louis George Cafe', sans-serif;
+white-space: nowrap;
+color:rgba(238,240,229,255);
+}
+
+.pfp{
+    height: 575px;
+    max-width: auto;
+    border-radius: 50%;
+    margin-left: 80px;
+}
+
+/*intro end*/
+
+
+
+
+/* Adjusting to certain screens*/
+
+/*
+@media(max-width: 1000px){
+    .intro{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .intro-text h1, .intro-text h3 {
+        text-align: center;
+        margin-bottom: 30px;;
+    }
+
+    .pfp{
+    height: 200px;
+    max-width: 100%;
+        
+    }
+}
+*/
