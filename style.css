@@ -21,16 +21,16 @@
 
 
 *{
-    margin: 0;
-    padding:0;
-    box-sizing: border-box;
+  margin: 0;
+  padding:0;
+  box-sizing: border-box;
 }
 
 html, body{
-    margin: 0;
-    padding: 0%;
-    height: 100%;
-    overflow: hidden;
+  margin: 0;
+  padding: 0%;
+  height: 100%;
+  overflow: hidden;
 }
 
 /*background----------------------------------------------------------*/
@@ -166,40 +166,40 @@ html, body{
 
 .navigation {
   
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 15px;
-    height: 70px;
-    position:fixed;
-    width:100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  height: 70px;
+  position:fixed;
+  width:100%;
    
-    z-index: 10;
+  z-index: 10;
 }
 
 .links{
-    display:flex;
-    gap:20px;
-    list-style-type: none;
-    margin:0;
-    padding: 0;
-    position: relative;
+  display:flex;
+  gap:20px;
+  list-style-type: none;
+  margin:0;
+  padding: 0;
+  position: relative;
 }
 
 
 .navigation a{
-    text-decoration: none;
-    color:rgba(238,240,229,255);
-    font-family: 'Louis George Cafe Bold', sans-serif;
-    font-size:xx-large;
+  text-decoration: none;
+  color:rgba(238,240,229,255);
+  font-family: 'Louis George Cafe Bold', sans-serif;
+  font-size:xx-large;
 }
 .navigation a:hover{
-    color:#FCCA59;
+  color:#FCCA59;
 }
 
 .logo{
-    height: 65%;
-    border-radius: 50%;
+  height: 65%;
+  border-radius: 50%;
 }
 /*navigation bar end----------------------------------------------------------*/
 
@@ -209,19 +209,19 @@ html, body{
 
  
 .intro{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height:100vh;
-    padding: 0 450px;
-    box-sizing: border-box
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height:100vh;
+  padding: 0 450px;
+  box-sizing: border-box
 }
 
 .intro-text  {
-    text-align: center;
-    margin-right: 25px;
-    position: relative;
-    z-index: 2;
+  text-align: center;
+  margin-right: 25px;
+  position: relative;
+  z-index: 2;
 }
 
 .intro-text h1{
@@ -239,11 +239,11 @@ color:rgba(238,240,229,255);
 }
 
 .pfp{
-    height: 400px;
-    max-width: auto;
-    border-radius: 50%;
-    margin-left: 80px;
-    padding-bottom: 25px;
+  height: 400px;
+  max-width: auto;
+  border-radius: 50%;
+  margin-left: 80px;
+  padding-bottom: 25px;
 }
 /*intro end--------------------------------------------------------------*/
 
@@ -264,10 +264,8 @@ color:rgba(238,240,229,255);
 }
 
 
-/*Carousel Start---------------------------------------------------------*/
+/*Carousel & Card Flip Start---------------------------------------------------------*/
 
-
-/* Carousel outer wrapper */
 .carousel-wrapper {
   height: calc(100vh - 150px); 
   display: flex;
@@ -277,7 +275,6 @@ color:rgba(238,240,229,255);
   background: transparent;
 }
 
-/* Carousel scroll area */
 .carousel {
   display: flex;
   gap: 30px;                
@@ -294,44 +291,92 @@ color:rgba(238,240,229,255);
 }
 
 .card-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 450px;
   flex-shrink: 0;
-  width: 450px;
 }
 
-.card {
-  width: 450px;
+.flip-card {
+  width: 100%;
   height: 625px;
-  border-radius: 12px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #ddd;
+  perspective: 1000px;
+  filter: drop-shadow(5px 5px 10px #6280d1);
 }
 
-.card img {
+.flip-card-inner {
   width: 100%;
   height: 100%;
-  object-fit: fill;
-  display: block;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: fit;
+  border-radius: 12px;
+}
+
+.flip-card-back {
+  background-color: #6d8ad9;
+  color:rgba(238,240,229,255);
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
 }
 
 .card-title {
-  font-family: 'Louis George Cafe Bold', sans-serif;
-  margin-top: 10px;
-  font-size: 1.4em;
-  font-weight: bold;
-  text-align: center;
-  width: 100%;
+  margin-top: 15px;
+  font-size: 2em;
   color:rgba(238,240,229,255);
-  
+  text-align: center;
+  font-family: 'Louis George Cafe Bold', sans-serif;
 }
 
-/*carousel end-------------------------------------------------------*/
+.description{
+  font-size: 2em;
+  margin:10px;
+  text-align:left;
+  font-family: 'Louis George Cafe', sans-serif;
+  padding-top:15px;
+}
+
+.github-link {
+  margin-top: auto;
+  padding-bottom: 10px;       
+  display: flex;
+  justify-content: center;
+}
+
+.github-link img {
+  width: 60px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+
+/* Carousel & Card Flip end--------------------------------------*/
 
 
 /* Adjusting to certain screens*/
