@@ -165,24 +165,24 @@ html, body{
 
 
 .navigation {
-  
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 15px;
-  height: 70px;
+  padding: 0 20px;
+  height: 75px;
   position:fixed;
   width:100%;
-   
   z-index: 10;
+  background-color: rgba(153, 183, 245, 0.5);
+  filter: drop-shadow(5px 5px 7px #6280d1);
 }
 
 .links{
   display:flex;
-  gap:20px;
+  gap:25px;
   list-style-type: none;
   margin:0;
-  padding: 0;
+  padding-left: 225px;
   position: relative;
 }
 
@@ -193,6 +193,7 @@ html, body{
   font-family: 'Louis George Cafe Bold', sans-serif;
   font-size:xx-large;
 }
+
 .navigation a:hover{
   color:#FCCA59;
 }
@@ -201,6 +202,18 @@ html, body{
   height: 65%;
   border-radius: 50%;
 }
+
+.contact-button{
+  background-color: #FCCA59; 
+  border-radius: 12px;
+  color: white;
+  padding: 5px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+
+}
+
 /*navigation bar end----------------------------------------------------------*/
 
 
@@ -254,10 +267,10 @@ color:rgba(238,240,229,255);
   color: #FCCA59;
   text-shadow: 5px 6px 7px #6280d1;
   margin: 0;
-  padding-top: 50px;
+  padding-top: 80px;
   height: 80px;
   text-align: center;
-  font-size: 4em;
+  font-size: 3.5em;
   line-height: 80px;
   position: relative;
   z-index: 1;
@@ -267,11 +280,10 @@ color:rgba(238,240,229,255);
 /*Carousel & Card Flip Start---------------------------------------------------------*/
 
 .carousel-wrapper {
-  height: calc(100vh - 150px); 
+  height: calc(100vh - 130px); 
   display: flex;
   justify-content: center;
   align-items: flex-start;     
-  overflow: hidden;
   background: transparent;
 }
 
