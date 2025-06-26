@@ -194,7 +194,7 @@ html, body{
   font-size:xx-large;
 }
 
-.navigation a:hover{
+.navigation a:hover:not(.contact-button){
   color:#FCCA59;
 }
 
@@ -203,19 +203,60 @@ html, body{
   border-radius: 50%;
 }
 
-.contact-button{
-  background-color: #FCCA59; 
+.contact-btn {
+  position: relative;
+  box-shadow: inset 0 0 0 4px #EEF0E5;
+  color:rgba(238,240,229,255);
+  transition: color 0.25s 0.083s; /* 0.25s and 0.25s / 3 */
+  padding: 8px 10px;
   border-radius: 12px;
-  color: white;
-  padding: 5px 25px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
+}
 
+.contact-btn::before,
+.contact-btn::after {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+  box-sizing: border-box;
+  border: 0 solid transparent;
+  width: 0;
+  height: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: 12px;
+}
+
+.contact-btn::before {
+  border-bottom-width: 4px;
+  border-left-width: 4px;
+}
+
+.contact-btn::after {
+  border-top-width: 4px;
+  border-right-width: 4px;
+}
+
+.contact-btn:hover {
+  color: #FCCA59;
+}
+
+.contact-btn:hover::before,
+.contact-btn:hover::after {
+  border-color: #FCCA59;
+  width: 100%;
+  height: 100%;
+  transition: border-color 0s, width 0.25s, height 0.25s;
+}
+
+.contact-btn:hover::before {
+  transition-delay: 0s, 0s, 0.25s;
+}
+
+.contact-btn:hover::after {
+  transition-delay: 0s, 0.25s, 0s;
 }
 
 /*navigation bar end----------------------------------------------------------*/
-
 
 
 /*Intro----------------------------------------------------------------------*/
