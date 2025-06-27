@@ -203,18 +203,23 @@ html, body{
   border-radius: 50%;
 }
 
+
+
 .contact-btn {
   position: relative;
-  box-shadow: inset 0 0 0 4px #EEF0E5;
-  color:rgba(238,240,229,255);
-  transition: color 0.25s 0.083s; /* 0.25s and 0.25s / 3 */
-  padding: 8px 10px;
+  padding: 8px 16px;
+  color: #EEF0E5;
+  background: transparent;
+  border: none;
   border-radius: 12px;
+  box-shadow: inset 0 0 0 4px #EEF0E5;
+  transition: color 0.25s ease;
+  overflow: hidden;
 }
 
 .contact-btn::before,
 .contact-btn::after {
-  content: '';
+content: '';
   position: absolute;
   pointer-events: none;
   box-sizing: border-box;
@@ -223,7 +228,7 @@ html, body{
   height: 0;
   bottom: 0;
   right: 0;
-  border-radius: 12px;
+  border-radius: 12px; /* Ensures corners are always rounded */
 }
 
 .contact-btn::before {
@@ -259,7 +264,7 @@ html, body{
 /*navigation bar end----------------------------------------------------------*/
 
 
-/*Intro----------------------------------------------------------------------*/
+/*HomePage----------------------------------------------------------------------*/
 
  
 .intro{
@@ -299,7 +304,7 @@ color:rgba(238,240,229,255);
   margin-left: 80px;
   padding-bottom: 25px;
 }
-/*intro end--------------------------------------------------------------*/
+/*HomePage end--------------------------------------------------------------*/
 
 
 
@@ -316,7 +321,6 @@ color:rgba(238,240,229,255);
   position: relative;
   z-index: 1;
 }
-
 
 /*Carousel & Card Flip Start---------------------------------------------------------*/
 
@@ -430,6 +434,30 @@ color:rgba(238,240,229,255);
 
 
 /* Carousel & Card Flip end--------------------------------------*/
+
+.socials h1{
+  font-size: 175px;
+  font-family: 'TF Spermo', Serif;
+  color: #FCCA59;
+  text-shadow: 5px 6px 7px #6280d1;
+  margin: 0;
+  padding-top: 80px;
+  height: 80px;
+  text-align: center;
+  line-height: 80px;
+  position: relative;
+  z-index: 1;
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  height:100vh;
+  padding: 0 450px;
+  box-sizing: border-box
+}
+
+
 
 
 /* Adjusting to certain screens*/
