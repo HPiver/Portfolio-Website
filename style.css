@@ -182,7 +182,7 @@ html, body{
   gap:25px;
   list-style-type: none;
   margin:0;
-  padding-left: 225px;
+  padding-left: 145px;
   position: relative;
 }
 
@@ -194,7 +194,7 @@ html, body{
   font-size:xx-large;
 }
 
-.navigation a:hover:not(.contact-button){
+.navigation a:hover{
   color:#FCCA59;
 }
 
@@ -202,8 +202,6 @@ html, body{
   height: 65%;
   border-radius: 50%;
 }
-
-
 
 .contact-btn {
   position: relative;
@@ -215,6 +213,8 @@ html, body{
   box-shadow: inset 0 0 0 4px #EEF0E5;
   transition: color 0.25s ease;
   overflow: hidden;
+  font-size:x-large !important;  
+ 
 }
 
 .contact-btn::before,
@@ -228,7 +228,7 @@ content: '';
   height: 0;
   bottom: 0;
   right: 0;
-  border-radius: 12px; /* Ensures corners are always rounded */
+  border-radius: 12px;
 }
 
 .contact-btn::before {
@@ -435,30 +435,145 @@ color:rgba(238,240,229,255);
 
 /* Carousel & Card Flip end--------------------------------------*/
 
-.socials h1{
-  font-size: 175px;
-  font-family: 'TF Spermo', Serif;
-  color: #FCCA59;
-  text-shadow: 5px 6px 7px #6280d1;
-  margin: 0;
-  padding-top: 80px;
-  height: 80px;
-  text-align: center;
-  line-height: 80px;
-  position: relative;
-  z-index: 1;
+
+
+/*About Me dropdown-----------------------------------------------*/
+social
+
+section {
+  padding-top: 4rem;
+  width: 50%;
+  margin: auto;
 }
+
+details[open] summary ~ * {
+  animation: open 0.3s ease-in-out;
+}
+
+@keyframes open {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+details summary {
+  width: 100%;
+  padding: 0.5rem 0;
+  border-top: 1px solid black;
+  position: relative;
+  cursor: pointer;
+  font-size: 1.25rem;
+  font-weight: 300;
+  list-style: none;
+}
+
+details summary:after {
+  content: "+";
+  color: black;
+  position: absolute;
+  font-size: 1.75rem;
+  line-height: 0;
+  margin-top: 0.75rem;
+  right: 0;
+  font-weight: 200;
+  transform-origin: center;
+  transition: 200ms linear;
+}
+details[open] summary:after {
+  transform: rotate(45deg);
+  font-size: 2rem;
+}
+details summary {
+  outline: 0;
+}
+details p {
+  font-size: 0.95rem;
+  margin: 0 0 1rem;
+  padding-top: 1rem;
+}
+
+/*about me drop down end---------------------------------------------------*/
 
 .socials {
-  display: flex;
-  align-items: center;
-  height:100vh;
-  padding: 0 450px;
-  box-sizing: border-box
+  text-align: center;
+  padding-top: 100px;
+}
+
+.socials h1 {
+  font-size: 100px;
+  font-family: 'TF Spermo', serif;
+  color: #FCCA59;
+  text-shadow: 5px 6px 7px #6280d1;
+  margin-bottom: 40px;
+  line-height: 1.1;
 }
 
 
+.contact-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: -30px 690px;
+  padding: 20px;
+  position: relative;
+  max-width: 500px;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 12px;
+  filter: drop-shadow(5px 5px 10px #5268a5);
+}
 
+.form-horizontal {
+  max-width: 400px;
+  font-family: 'Louis George Cafe', sans-serif;
+  font-weight: 400;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-control, textarea {
+  width: 100%; 
+  max-width: 400px;
+  max-height: 400px;
+  min-width: 400px;
+  background-color: transparent;
+  color: #6280d1;
+  letter-spacing: 1px;
+  box-sizing: border-box;
+}
+
+.send-button {
+  margin-top: 15px;
+  height: 34px;
+  width: 400px;
+  overflow: hidden;
+  transition: all .2s ease-in-out;
+}
+
+.alt-send-button {
+  width: 400px;
+  height: 34px;
+  transition: all .2s ease-in-out;
+}
+
+.send-text {
+  display: block;
+  margin-top: 10px;
+  font: 700 12px 'Lato', sans-serif;
+  letter-spacing: 2px;
+}
+
+.alt-send-button:hover {
+  transform: translate3d(0px, -29px, 0px);
+}
 
 /* Adjusting to certain screens*/
 
