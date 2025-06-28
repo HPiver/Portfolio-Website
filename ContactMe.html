@@ -1,556 +1,65 @@
-@font-face {
-  font-family: 'Louis George Cafe';
-  src: url('fonts/Louis George Cafe.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Louis George Cafe Bold';
-  src: url('fonts/Louis George Cafe Bold.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'TF Spermo';
-  src: url('fonts/TF Spermo.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-
-*{
-  margin: 0;
-  padding:0;
-  box-sizing: border-box;
-}
-
-html, body{
-  margin: 0;
-  padding: 0%;
-  height: 100%;
-  overflow: hidden;
-}
-
-/*background----------------------------------------------------------*/
-
-.background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #99b7f5;
-  z-index: -1;
-  overflow: hidden;
-}
-
-
-.blobs {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
-
-.blob {
-  position: absolute;
-  border-radius: 50%;
-  mix-blend-mode: normal;
-  filter: blur(40px);
-  opacity: 1;
-  pointer-events: none;
-}
-
-
-.blob.a {
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(153, 183, 245, 0.8) 0%, rgba(255,255,255,1) 150%);
-  top: -100px;
-  left: -100px;
-  animation: floatA 60s linear infinite;
-}
-
-
-.blob.b {
-  width: 350px;
-  height: 350px;
-  background: radial-gradient(circle, rgba(153, 183, 245, 0.8) 0%, rgba(255,255,255,1) 150%);
-  top: 30%;
-  right: -150px;
-  animation: floatB 45s linear infinite;
-}
-
-.blob.c {
-  width: 250px;
-  height: 250px;
-  background: radial-gradient(circle, rgba(153, 183, 245, 0.8) 0%, rgba(255,255,255,1) 150%);
-  bottom: 10%;
-  left: -10%;
-  animation: floatC 30s linear infinite;
-}
-
-.blob.d {
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(153, 183, 245, 0.8) 0%, rgba(255,255,255,1) 150%);
-  bottom: 50%;
-  right: 60%;
-  animation: floatD 50s linear infinite;
-}
-
-.blob.e {
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, rgba(153, 183, 245, 0.8) 0%, rgba(255,255,255,1) 150%);
-  top: 45%;
-  left: 35%;
-  transform: translateX(-50%);
-  animation: floatE 70s linear infinite;
-}
-
-
-@keyframes floatA {
-  0%   { transform: translate(0, 0); }
-  25%  { transform: translate(80vw, 10vh); }
-  50%  { transform: translate(60vw, 70vh); }
-  75%  { transform: translate(10vw, 80vh); }
-  100% { transform: translate(0, 0); }
-}
-
-@keyframes floatB {
-  0%   { transform: translate(0, 0); }
-  25%  { transform: translate(-50vw, 10vh); }
-  50%  { transform: translate(-40vw, 60vh); }
-  75%  { transform: translate(-10vw, 80vh); }
-  100% { transform: translate(0, 0); }
-}
-
-@keyframes floatC {
-  0%   { transform: translate(0, 0); }
-  25%  { transform: translate(60vw, -10vh); }
-  50%  { transform: translate(80vw, 40vh); }
-  75%  { transform: translate(30vw, 80vh); }
-  100% { transform: translate(0, 0); }
-}
-
-@keyframes floatD {
-  0%   { transform: translate(0, 0); }
-  20%  { transform: translate(-30vw, -15vh); }
-  40%  { transform: translate(-60vw, 10vh); }
-  60%  { transform: translate(-20vw, 60vh); }
-  80%  { transform: translate(10vw, 40vh); }
-  100% { transform: translate(0, 0); }
-}
-
-@keyframes floatE {
-  0%   { transform: translate(0, 0); }
-  20%  { transform: translate(20vw, -20vh); }
-  40%  { transform: translate(70vw, -10vh); }
-  60%  { transform: translate(40vw, 50vh); }
-  80%  { transform: translate(0vw, 70vh); }
-  100% { transform: translate(0, 0); }
-}
-
-/*background end------------------------------------------------------*/
-
-
-/*Navigation Bar-----------------------------------------------------*/
-
-.navigation, .intro{
-    position:relative;
-}
-
-
-.navigation {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
-  height: 75px;
-  position:fixed;
-  width:100%;
-  z-index: 10;
-  background-color: rgba(153, 183, 245, 0.5);
-  filter: drop-shadow(5px 5px 7px #6280d1);
-}
-
-.links{
-  display:flex;
-  gap:25px;
-  list-style-type: none;
-  margin:0;
-  padding-left: 145px;
-  position: relative;
-}
-
-
-.navigation a{
-  text-decoration: none;
-  color:rgba(238,240,229,255);
-  font-family: 'Louis George Cafe Bold', sans-serif;
-  font-size:xx-large;
-}
-
-.navigation a:hover{
-  color:#FCCA59;
-}
-
-.logo{
-  height: 75%;
-}
-
-.contact-btn {
-  position: relative;
-  padding: 8px 16px;
-  color: #EEF0E5;
-  background: transparent;
-  border: none;
-  border-radius: 12px;
-  box-shadow: inset 0 0 0 4px #EEF0E5;
-  transition: color 0.25s ease;
-  overflow: hidden;
-  font-size:x-large !important;  
- 
-}
-
-.contact-btn::before,
-.contact-btn::after {
-content: '';
-  position: absolute;
-  pointer-events: none;
-  box-sizing: border-box;
-  border: 0 solid transparent;
-  width: 0;
-  height: 0;
-  bottom: 0;
-  right: 0;
-  border-radius: 12px;
-}
-
-.contact-btn::before {
-  border-bottom-width: 4px;
-  border-left-width: 4px;
-}
-
-.contact-btn::after {
-  border-top-width: 4px;
-  border-right-width: 4px;
-}
-
-.contact-btn:hover {
-  color: #FCCA59;
-}
-
-.contact-btn:hover::before,
-.contact-btn:hover::after {
-  border-color: #FCCA59;
-  width: 100%;
-  height: 100%;
-  transition: border-color 0s, width 0.25s, height 0.25s;
-}
-
-.contact-btn:hover::before {
-  transition-delay: 0s, 0s, 0.25s;
-}
-
-.contact-btn:hover::after {
-  transition-delay: 0s, 0.25s, 0s;
-}
-
-/*navigation bar end----------------------------------------------------------*/
-
-
-/*HomePage----------------------------------------------------------------------*/
-
- 
-.intro{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height:100vh;
-  padding: 0 450px;
-  box-sizing: border-box
-}
-
-.intro-text  {
-  text-align: center;
-  margin-right: 25px;
-  position: relative;
-  z-index: 2;
-}
-
-.intro-text h1{
-font-size: 175px;
-font-family: 'TF Spermo', Serif;
-color: #FCCA59;
-text-shadow: 7px 10px 7px #6280d1;
-}
-
-.intro-text h3 {
-font-size: 50px;
-font-family: 'Louis George Cafe', sans-serif;
-white-space: nowrap;
-color:rgba(238,240,229,255);
-}
-
-.pfp{
-  height: 400px;
-  max-width: auto;
-  border-radius: 50%;
-  margin-left: 80px;
-  padding-bottom: 25px;
-}
-/*HomePage end--------------------------------------------------------------*/
-
-
-
-.pagetitle {
-  font-family: 'Louis George Cafe Bold', sans-serif;
-  color: #FCCA59;
-  text-shadow: 5px 6px 7px #6280d1;
-  margin: 0;
-  padding-top: 80px;
-  height: 80px;
-  text-align: center;
-  font-size: 3.5em;
-  line-height: 80px;
-  position: relative;
-  z-index: 1;
-}
-
-/*Carousel & Card Flip Start---------------------------------------------------------*/
-
-.carousel-wrapper {
-  height: calc(100vh - 130px); 
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;     
-  background: transparent;
-}
-
-.carousel {
-  display: flex;
-  gap: 30px;                
-  overflow-x: auto;
-  overflow-y: hidden;
-  margin-top: 20px;           
-  padding: 80px 20px;
-  scrollbar-width: none;      
-  -ms-overflow-style: none;   
-}
-
-.carousel::-webkit-scrollbar {
-  display: none;              
-}
-
-.card-wrapper {
-  width: 450px;
-  flex-shrink: 0;
-}
-
-.flip-card {
-  width: 100%;
-  height: 625px;
-  perspective: 1000px;
-  filter: drop-shadow(5px 5px 10px #6280d1);
-}
-
-.flip-card-inner {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  transform-style: preserve-3d;
-  transition: transform 0.8s;
-}
-
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
-
-.flip-card-front,
-.flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 12px;
-  overflow: hidden;
-  backface-visibility: hidden;
-}
-
-.flip-card-front img {
-  width: 100%;
-  height: 100%;
-  object-fit: fit;
-  border-radius: 12px;
-}
-
-.flip-card-back {
-  background-color: #6d8ad9;
-  color:rgba(238,240,229,255);
-  transform: rotateY(180deg);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 20px;
-  text-align: center;
-}
-
-.card-title {
-  margin-top: 15px;
-  font-size: 2em;
-  color:rgba(238,240,229,255);
-  text-align: center;
-  font-family: 'Louis George Cafe Bold', sans-serif;
-}
-
-.description{
-  font-size: 2em;
-  margin:10px;
-  text-align:left;
-  font-family: 'Louis George Cafe', sans-serif;
-  padding-top:15px;
-}
-
-.github-link {
-  margin-top: auto;
-  padding-bottom: 10px;       
-  display: flex;
-  justify-content: center;
-}
-
-.github-link img {
-  width: 60px;
-  height: auto;
-  object-fit: contain;
-  display: block;
-  opacity: 0.9;
-  transition: opacity 0.3s ease;
-}
-
-
-/* Carousel & Card Flip end--------------------------------------*/
-
-
-
-/*About Me dropdown-----------------------------------------------*/
-
-
-
-/*about me drop down end---------------------------------------------------*/
-
-.socials {
-  text-align: center;
-  padding-top: 100px;
-}
-
-.socials h1 {
-  font-size: 100px;
-  font-family: 'TF Spermo', serif;
-  color: #FCCA59;
-  text-shadow: 5px 6px 7px #6280d1;
-  margin-bottom: 40px;
-  line-height: 1.1;
-}
-
-
-.contact-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: -30px 690px;
-  padding: 20px;
-  position: relative;
-  max-width: 500px;
-  text-align: center;
-  background-color: #fff;
-  border-radius: 12px;
-  filter: drop-shadow(5px 5px 10px #5268a5);
-}
-
-.form-horizontal {
-  max-width: 400px;
-  font-family: 'Louis George Cafe', sans-serif;
-  font-weight: 400;
-}
-
-.form-group {
-  margin-bottom: 20px;
-}
-
-.form-control, textarea {
-  width: 100%; 
-  max-width: 400px;
-  max-height: 400px;
-  min-width: 400px;
-  background-color: transparent;
-  color: #062d97;
-  letter-spacing: 1px;
-  box-sizing: border-box;
-  padding-left:3px;
-}
-
-.send-button {
-  margin-top: 15px;
-  height: 34px;
-  width: 400px;
-  overflow: hidden;
-  transition: all .2s ease-in-out;
-}
-
-.alt-send-button {
-  width: 400px;
-  height: 34px;
-  transition: all .2s ease-in-out;
-}
-
-.send-text {
-  display: block;
-  margin-top: 10px;
-  font: 700 12px 'Lato', sans-serif;
-  letter-spacing: 2px;
-}
-
-.alt-send-button:hover {
-  transform: translate3d(0px, -29px, 0px);
-}
-
-.socials-links{
-  margin-top: 80px;
-  text-align: center;
-}
-
-.socials-links img {
-  width: 70px;   
-  height: 70px;
-  margin-right:20px;
-  filter: drop-shadow(2px 2px 10px #5268a5);
-}
-
-/* Adjusting to certain screens*/
-
-/*
-@media(max-width: 1000px){
-    .intro{
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        padding: 40px 20px;
-    }
-
-    .intro-text h1, .intro-text h3 {
-        text-align: center;
-        margin-bottom: 30px;;
-    }
-
-    .pfp{
-    height: 200px;
-    max-width: 100%;
-        
-    }
-}
-*/
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <title>Contact Me</title>
+</head>
+
+<body>
+    <div class="background">
+        <div class="blobs">
+            <div class="blob a">a</div>
+            <div class="blob b">b</div>
+            <div class="blob c">c</div>
+            <div class="blob d">d</div>
+            <div class="blob e">e</div>
+	    </div>          
+    </div>
+   <div class="navigation" >
+                <img class="logo" src= "https://i.pinimg.com/736x/80/a5/6c/80a56c43eb69ae0a682620cf870cf107.jpg" alt= "logo">
+            <ul class="links">
+                <li><a class = "active"  href="index.html">Home</a></li>
+                <li><a href="aboutme.html">About Me</a></li>   
+                <li><a href="Projects.html">Projects</a></li> 
+            </ul>
+            <a class="contact-btn" href="ContactMe.html">Contact Me</a>
+        </div>
+        <div class="socials">
+            <h1>Contact Me</h1>
+              
+        </div>
+  
+  <div class="contact-wrapper">
+    <form id="contact-form" class="form-horizontal" role="form">
+       
+      <div class="form-group">
+        <div class="col-sm-12">
+          <input type="text" class="form-control" id="name" placeholder="NAME" name="name" value="" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-12">
+          <input type="email" class="form-control" id="email" placeholder="EMAIL" name="email" value="" required>
+        </div>
+      </div>
+
+      <textarea class="form-control" rows="10" placeholder="MESSAGE" name="message" required></textarea>
+      
+      <button class="btn btn-primary send-button" id="submit" type="submit" value="SEND">
+        <div class="alt-send-button">
+          <i class="fa fa-paper-plane"></i><span class="send-text">SEND</span>
+        </div>
+      
+      </button>
+      
+    </form>
+      </div>
+    <div class="socials-links">
+       <a href="https://github.com/HPiver" target="_blank"><img src="Images\githubIconYellow.png"/></a>
+       <a href="www.linkedin.com/in/heather-piver" target="_blank"><img src="Images\linkedInIconYellow.png"/></a>
+    </div>
+
+</body>
+</html>
