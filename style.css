@@ -26,11 +26,18 @@
   box-sizing: border-box;
 }
 
-html, body{
+html, body {
   margin: 0;
-  padding: 0%;
+  padding: 0;
   height: 100%;
-  overflow: hidden;
+  overflow: hidden;         /* prevent scroll by default */
+  scroll-behavior: smooth;  /* smooth scrolling */
+  box-sizing: border-box;
+}
+
+body.Homepage {
+  overflow-y: auto;         /* enable vertical scroll only on homepage */
+  height: 100%;             /* ensure body fills viewport height */
 }
 
 /*background----------------------------------------------------------*/
@@ -199,8 +206,7 @@ html, body{
 }
 
 .logo{
-  height: 65%;
-  border-radius: 50%;
+  height: 75%;
 }
 
 .contact-btn {
@@ -439,64 +445,6 @@ color:rgba(238,240,229,255);
 
 /*About Me dropdown-----------------------------------------------*/
 
-section {
-  padding-top: 4rem;
-  width: 50%;
-  margin: auto;
-  z-index: 15;
-}
-
-details[open] summary ~ * {
-  animation: open 0.3s ease-in-out;
-}
-
-@keyframes open {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-details summary::-webkit-details-marker {
-  display: none;
-}
-
-details summary {
-  width: 100%;
-  padding: 0.5rem 0;
-  border-top: 1px solid black;
-  position: relative;
-  cursor: pointer;
-  font-size: 1.25rem;
-  font-weight: 300;
-  list-style: none;
-}
-
-details summary:after {
-  content: "+";
-  color: black;
-  position: absolute;
-  font-size: 1.75rem;
-  line-height: 0;
-  margin-top: 0.75rem;
-  right: 0;
-  font-weight: 200;
-  transform-origin: center;
-  transition: 200ms linear;
-}
-details[open] summary:after {
-  transform: rotate(45deg);
-  font-size: 2rem;
-}
-details summary {
-  outline: 0;
-}
-details p {
-  font-size: 0.95rem;
-  margin: 0 0 1rem;
-  padding-top: 1rem;
-}
 
 /*about me drop down end---------------------------------------------------*/
 
@@ -530,7 +478,7 @@ details p {
 }
 
 .form-horizontal {
-  max-width: 400px;
+  max-width: 450px;
   font-family: 'Louis George Cafe', sans-serif;
   font-weight: 400;
 }
@@ -541,7 +489,7 @@ details p {
 
 .form-control, textarea {
   width: 100%; 
-  max-width: 400px;
+  max-width: 450px;
   max-height: 400px;
   min-width: 400px;
   background-color: transparent;
@@ -554,13 +502,13 @@ details p {
 .send-button {
   margin-top: 15px;
   height: 34px;
-  width: 400px;
+  width: 450px;
   overflow: hidden;
   transition: all .2s ease-in-out;
 }
 
 .alt-send-button {
-  width: 400px;
+  width: 450px;
   height: 34px;
   transition: all .2s ease-in-out;
 }
