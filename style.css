@@ -443,10 +443,66 @@ color:rgba(238,240,229,255);
 
 
 
-/*About Me dropdown-----------------------------------------------*/
+/*About Me-----------------------------------------------*/
+section{
+width: 100%;
+height: 100vh;
+}
+
+.aboutme-wrapper {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  gap: 45px;
+  padding: 350px 80px;
+}
+
+.aboutme-intro {
+  font-family: 'Louis George Cafe Bold', sans-serif;
+  color: #5268a5;
+  height: auto;
+  text-align: left;
+  font-size: 2.0em;
+  line-height: 80px;
+  position: relative;
+  z-index: 1;
+  flex: 1 1 45%;
+}
+
+.currrently {
+  text-align: center; 
+  font-family: 'Louis George Cafe', sans-serif;
+  color: #EEF0E5;
+  font-size: 2.0em;
+  flex: 1 1 45%;
+}
+
+.btn-current {
+  font-family: 'Louis George Cafe Bold', sans-serif;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 12px 30px;
+  border: 4px solid #FCCA59;
+  color: #EEF0E5;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all .6s ease;
+  position: relative;
+  overflow: hidden;
+  font-weight: 700;
+  text-align: center;
+  border-radius:12px;
+  margin: 8px;
+}
+
+.btn-current:hover {
+  background-color: #FCCA59;
+  color: #6280d1;
+}
 
 
-/*about me drop down end---------------------------------------------------*/
+
+/*about me end---------------------------------------------------*/
 
 .socials {
   text-align: center;
