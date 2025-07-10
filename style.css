@@ -453,8 +453,15 @@ height: 100vh;
   display: flex;
   flex-direction: column; 
   align-items: center;
-  gap: 45px;
-  padding: 350px 80px;
+  gap: 85px;
+  padding: 250px 80px;
+}
+
+
+.sidebyside-wrapper{
+display:inline-flex;
+padding-right: 20px;
+gap:200px;
 }
 
 .aboutme-intro {
@@ -483,7 +490,7 @@ height: 100vh;
   display: inline-block;
   padding: 12px 30px;
   border: 4px solid #FCCA59;
-  color: #EEF0E5;
+  color: #5268a5;
   text-decoration: none;
   cursor: pointer;
   transition: all .6s ease;
@@ -498,6 +505,43 @@ height: 100vh;
 .btn-current:hover {
   background-color: #FCCA59;
   color: #6280d1;
+}
+
+
+.skillset{
+  font-family: 'Louis George Cafe Bold', sans-serif;
+  color: #EEF0E5;
+  text-align: center;
+  font-size: 2.0em;
+  border: 2px solid #FCCA59;
+  padding:10px 30px 30px;
+  border-radius: 12px;
+}
+
+.skills{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 400px;
+  list-style: none;
+}
+
+.button-8 {
+  font-family: 'Louis George Cafe', sans-serif;
+  background-color: #ffd470;
+  border-radius: 3px;
+  border: 1px solid #FCCA59;
+  box-shadow: rgba(255, 255, 255, .7) 0 1px 0 0 inset;
+  box-sizing: border-box;
+  color: #5268a5;
+  display: inline-block;
+  font-size: 25px;
+  line-height: 1.15385;
+  margin: 5px 0 ;
+  padding: 8px .8em;
+  position: relative;
+  text-align: center;
+  width: 48%;
 }
 
 
