@@ -312,7 +312,7 @@ color:rgba(238,240,229,255);
 }
 /*HomePage end--------------------------------------------------------------*/
 
-
+/*Projects Page Start---------------------------------------------------------*/
 
 .pagetitle {
   font-family: 'Louis George Cafe Bold', sans-serif;
@@ -328,7 +328,7 @@ color:rgba(238,240,229,255);
   z-index: 1;
 }
 
-/*Carousel & Card Flip Start---------------------------------------------------------*/
+
 
 .carousel-wrapper {
   height: calc(100vh - 130px); 
@@ -439,10 +439,7 @@ color:rgba(238,240,229,255);
 }
 
 
-/* Carousel & Card Flip end--------------------------------------*/
-
-
-
+/* Projects Page end--------------------------------------*/
 /*About Me-----------------------------------------------*/
 section{
 width: 100%;
@@ -453,44 +450,63 @@ height: 100vh;
   display: flex;
   flex-direction: column; 
   align-items: center;
-  gap: 85px;
-  padding: 250px 80px;
+  gap: 75px;
+  padding: 185px 80px;
 }
 
 
 .sidebyside-wrapper{
-display:inline-flex;
-padding-right: 20px;
-gap:200px;
+  padding-right: 0px;
+  gap:200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .aboutme-intro {
   font-family: 'Louis George Cafe Bold', sans-serif;
-  color: #5268a5;
+  color: #EEF0E5;
   height: auto;
-  text-align: left;
-  font-size: 2.0em;
+  text-align: center;
+  font-size: 3.0em;
   line-height: 80px;
   position: relative;
-  z-index: 1;
-  flex: 1 1 45%;
+}
+
+.intro-p{
+  font-family: 'Louis George Cafe', sans-serif;
+  font-size:2.3em;
+  max-width: 650px;
+  width: 100%;
+  color:#EEF0E5;
+  background-color:#6d8ad9;
+  padding: 35px 25px;
+  border-radius: 12px;
+  height: 325px;
+  border:2px solid #FCCA59;
+  text-align:center;
 }
 
 .currrently {
   text-align: center; 
   font-family: 'Louis George Cafe', sans-serif;
   color: #EEF0E5;
-  font-size: 2.0em;
-  flex: 1 1 45%;
+  font-size: 2.3em;
+  background-color:#6d8ad9;
+  padding:35px 25px;
+  border-radius: 12px;
+  height:325px;
+  max-width:650px;
+  border:2px solid #FCCA59;
 }
 
 .btn-current {
   font-family: 'Louis George Cafe Bold', sans-serif;
   text-transform: uppercase;
   display: inline-block;
-  padding: 12px 30px;
+  padding: 10px 30px;
   border: 4px solid #FCCA59;
-  color: #5268a5;
+  color: #FCCA59;
   text-decoration: none;
   cursor: pointer;
   transition: all .6s ease;
@@ -499,52 +515,14 @@ gap:200px;
   font-weight: 700;
   text-align: center;
   border-radius:12px;
-  margin: 8px;
+  margin-top:15px;
+  
 }
 
 .btn-current:hover {
   background-color: #FCCA59;
-  color: #6280d1;
+  color: #6d8ad9;
 }
-
-
-.skillset{
-  font-family: 'Louis George Cafe Bold', sans-serif;
-  color: #EEF0E5;
-  text-align: center;
-  font-size: 2.0em;
-  border: 2px solid #FCCA59;
-  padding:10px 30px 30px;
-  border-radius: 12px;
-}
-
-.skills{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  max-width: 400px;
-  list-style: none;
-}
-
-.button-8 {
-  font-family: 'Louis George Cafe', sans-serif;
-  background-color: #ffd470;
-  border-radius: 3px;
-  border: 1px solid #FCCA59;
-  box-shadow: rgba(255, 255, 255, .7) 0 1px 0 0 inset;
-  box-sizing: border-box;
-  color: #5268a5;
-  display: inline-block;
-  font-size: 25px;
-  line-height: 1.15385;
-  margin: 5px 0 ;
-  padding: 8px .8em;
-  position: relative;
-  text-align: center;
-  width: 48%;
-}
-
-
 
 /*about me end---------------------------------------------------*/
 
@@ -554,11 +532,11 @@ gap:200px;
 }
 
 .socials h1 {
-  font-size: 100px;
-  font-family: 'TF Spermo', serif;
+  font-size: 4.5em;;
+  font-family: 'Louis George Cafe Bold', sans-serif;
   color: #FCCA59;
   text-shadow: 5px 6px 7px #6280d1;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
   line-height: 1.1;
 }
 
