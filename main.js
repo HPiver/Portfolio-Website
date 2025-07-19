@@ -1,36 +1,35 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // ----- Carousel Scroll Logic -----
-  const carousel = document.querySelector('.carousel');
-  if (carousel) {
-    let scrollTarget = carousel.scrollLeft;
-    let isScrolling = false;
+  // ----- Carousel Grab Logic -----
+    const carousel = document.querySelector('.carousel');
+  let isDown = false;
+  let startX;
+  let scrollLeft;
 
-    carousel.addEventListener('wheel', (e) => {
-      e.preventDefault();
+  carousel.addEventListener('mousedown', (e) => {
+    isDown = true;
+    carousel.classList.add('active');
+    startX = e.pageX - carousel.offsetLeft;
+    scrollLeft = carousel.scrollLeft;
+  });
 
-      scrollTarget += e.deltaY * 1; 
-      scrollTarget = Math.max(0, Math.min(scrollTarget, carousel.scrollWidth - carousel.clientWidth));
+  carousel.addEventListener('mouseleave', () => {
+    isDown = false;
+    carousel.classList.remove('active');
+  });
 
-      if (!isScrolling) {
-        isScrolling = true;
-        smoothScroll();
-      }
-    });
+  carousel.addEventListener('mouseup', () => {
+    isDown = false;
+    carousel.classList.remove('active');
+  });
 
-    function smoothScroll() {
-      const currentScroll = carousel.scrollLeft;
-      const diff = scrollTarget - currentScroll;
+  carousel.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - carousel.offsetLeft;
+    const walk = (x - startX) * 2; // adjust scroll speed
+    carousel.scrollLeft = scrollLeft - walk;
+  });
 
-      if (Math.abs(diff) < 0.5) {
-        carousel.scrollLeft = scrollTarget;
-        isScrolling = false;
-        return;
-      }
-
-      carousel.scrollLeft = currentScroll + diff * 0.2;
-      requestAnimationFrame(smoothScroll);
-    }
-  }
 
   // ----- GitHub Latest Repo Fetch -----
   fetch("https://api.github.com/users/HPiver/repos?sort=updated&per_page=1")
@@ -48,4 +47,10 @@ document.addEventListener("DOMContentLoaded", function () {
       const link = document.getElementById("latest-repo");
       if (link) link.textContent = "Failed to load project.";
     });
+});
+
+
+  // -----no image grab/drag -----
+document.querySelectorAll('.carousel img').forEach(img => {
+  img.addEventListener('dragstart', e => e.preventDefault());
 });
