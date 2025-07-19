@@ -29,15 +29,11 @@
 html, body {
   margin: 0;
   padding: 0;
-  height: 100%;
-  overflow: hidden;         /* prevent scroll by default */
-  scroll-behavior: smooth;  /* smooth scrolling */
+  height: 100%;      
+  scroll-behavior: smooth;  
   box-sizing: border-box;
-}
-
-body.Homepage {
-  overflow-y: auto;         /* enable vertical scroll only on homepage */
-  height: 100%;             /* ensure body fills viewport height */
+  overflow-y: auto; 
+  overflow-x: hidden;
 }
 
 /*background----------------------------------------------------------*/
@@ -289,14 +285,17 @@ content: '';
   z-index: 2;
 }
 
-.intro-text h1{
+.name img{
 font-size: 175px;
 font-family: 'TF Spermo', Serif;
 color: #FCCA59;
 text-shadow: 7px 10px 7px #6280d1;
+height:400px;
+
 }
 
 .intro-text h3 {
+padding-top: 30px;
 font-size: 50px;
 font-family: 'Louis George Cafe', sans-serif;
 white-space: nowrap;
@@ -318,7 +317,6 @@ color:rgba(238,240,229,255);
   font-family: 'Louis George Cafe Bold', sans-serif;
   color: #FCCA59;
   text-shadow: 5px 6px 7px #6280d1;
-  margin: 0;
   padding-top: 80px;
   height: 80px;
   text-align: center;
@@ -328,14 +326,13 @@ color:rgba(238,240,229,255);
   z-index: 1;
 }
 
-
-
 .carousel-wrapper {
-  height: calc(100vh - 130px); 
+  height: calc(100vh - 100px); 
   display: flex;
   justify-content: center;
   align-items: flex-start;     
   background: transparent;
+  overflow-y: hidden;
 }
 
 .carousel {
@@ -345,17 +342,17 @@ color:rgba(238,240,229,255);
   overflow-y: hidden;
   margin-top: 20px;           
   padding: 80px 20px;
-  scrollbar-width: none;      
-  -ms-overflow-style: none;   
-}
-
-.carousel::-webkit-scrollbar {
-  display: none;              
+  cursor: grab;
 }
 
 .card-wrapper {
   width: 450px;
   flex-shrink: 0;
+}
+
+.carousel:active {
+  cursor: grabbing;
+  user-select: none;
 }
 
 .flip-card {
