@@ -54,3 +54,4 @@ document.addEventListener("DOMContentLoaded", function () {
 document.querySelectorAll('.carousel img').forEach(img => {
   img.addEventListener('dragstart', e => e.preventDefault());
 });
+

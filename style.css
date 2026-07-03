@@ -589,9 +589,31 @@ textarea {
   letter-spacing: 2px;
 }
 
+.thankyou_message {
+  display: none;
+  margin: 10px auto;
+  border: 2px solid #FCCA59;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.thankyou_message h2 {
+  margin: 0;
+  color: #6d8ad9;
+  font-family: 'Louis George Cafe Bold', sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.4;
+}
+
+.thankyou_message em {
+  color: #6d8ad9;
+  font-style: normal;
+}
+
 .alt-send-button:hover { /*change this*/
   transform: translate3d(0px, -5px, 0px);
 }
+
 
 .socials-links{
   margin-top: 80px;
